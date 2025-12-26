@@ -1,0 +1,39 @@
+{
+  "version": "1.0.0",
+  "form": "Digital Sovereignty Diagnostic Intake",
+  "fields": [
+    { "key": "fullName", "type": "string", "required": true, "label": "Your Name" },
+    { "key": "email", "type": "string", "required": true, "label": "Email" },
+    { "key": "company", "type": "string", "required": false, "label": "Organisation" },
+    { "key": "role", "type": "string", "required": false, "label": "Your Current Role" },
+    {
+      "key": "industry",
+      "type": "enum",
+      "required": false,
+      "label": "Industry",
+      "options": ["Finance", "Energy", "Travel/Tourism", "Healthcare", "Retail", "Government", "Other"]
+    },
+    {
+      "key": "btcMaturity",
+      "type": "enum",
+      "required": true,
+      "label": "Bitcoin Maturity",
+      "options": ["new", "experimenting", "strategic", "sovereign"]
+    },
+    { "key": "reason", "type": "string", "required": false, "label": "Top reason you're exploring Bitcoin adoption?" },
+    {
+      "key": "budget",
+      "type": "enum",
+      "required": false,
+      "label": "Indicative Budget",
+      "options": ["<5k", "5k-25k", "25k-100k", "100k-500k", "500k+"]
+    },
+    {
+      "key": "timeline",
+      "type": "enum",
+      "required": false,
+      "label": "Timeline",
+      "options": ["now", "30-days", "90-days", "6-months", "exploring"]
+    }
+  ]
+}
