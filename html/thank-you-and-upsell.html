@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Confirmed — Digital Sovereignty Diagnostic</title>
+<style>
+  :root{
+    --bg:#0a0f14;
+    --card:#11161d;
+    --text:#efefef;
+    --muted:rgba(239,239,239,0.72);
+    --accent:#00d4ff;
+    --accent2:#00b2d6;
+    --ok:#2ee59d;
+    --warn:#ffd36a;
+  }
+  body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+  }
+  header, section{
+    padding:20px;
+    max-width:900px;
+    margin:auto;
+  }
+  .card{
+    background:var(--card);
+    padding:20px;
+    border-radius:12px;
+    margin-top:18px;
+  }
+  h1,h2{ margin:0 0 12px 0; }
+  h1{ color:var(--accent); font-size:28px; }
+  h2{ color:var(--accent); font-size:20px; }
+  p{ margin:10px 0; color:var(--muted); line-height:1.45; }
+  .badge{
+    display:inline-block;
+    padding:6px 10px;
+    border-radius:999px;
+    font-size:12px;
+    letter-spacing:0.4px;
+    margin-bottom:10px;
+  }
+  .badge.ok{ background:rgba(46,229,157,0.12); color:var(--ok); border:1px solid rgba(46,229,157,0.35); }
+  .badge.warn{ background:rgba(255,211,106,0.10); color:var(--warn); border:1px solid rgba(255,211,106,0.35); }
+  .grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+  @media(min-width:860px){
+    .grid{ grid-template-columns:1.3fr 0.7fr; }
+  }
+  .ctaRow{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    margin-top:14px;
+  }
+  @media(min-width:600px){
+    .ctaRow{ flex-direction:row; }
+  }
+  a.btn, button.btn{
+    display:inline-block;
+    text-decoration:none;
+    text-align:center;
+    padding:14px 16px;
+    border-radius:10px;
+    font-weight:700;
+    border:none;
+    cursor:pointer;
+  }
+  a.btn.primary{
+    background:var(--accent);
+    color:#00131a;
+  }
+  a.btn.primary:hover{ background:var(--accent2); }
+  a.btn.secondary, button.btn.secondary{
+    background:transparent;
+    color:var(--text);
+    border:1px solid rgba(239,239,239,0.22);
+  }
+  a.btn.secondary:hover, button.btn.secondary:hover{
+    border-color:rgba(0,212,255,0.55);
+    color:var(--accent);
+  }
+  .list{
+    padding-left:18px;
+    margin:10px 0 0 0;
+    color:var(--muted);
+  }
+  .list li{ margin:8px 0; }
+  .tiny{
+    font-size:12px;
+    color:rgba(239,239,239,0.55);
+  }
+  .hr{
+    height:1px;
+    background:rgba(239,239,239,0.12);
+    margin:14px 0;
+  }
+  .kpi{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    margin-top:10px;
+  }
+  .kpi .pill{
+    background:rgba(0,212,255,0.08);
+    border:1px solid rgba(0,212,255,0.18);
+    border-radius:12px;
+    padding:12px;
+  }
+  .pill b{ color:var(--accent); display:block; margin-bottom:6px; }
+  .mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
+
+  /* Payment box styling (kept consistent with theme) */
+  .payBox{
+    margin-top:12px;
+    padding:14px;
+    border-radius:12px;
+    border:1px solid rgba(239,239,239,0.18);
+    background:rgba(255,255,255,0.03);
+  }
+  .payAddr{
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    font-size:12.5px;
+    line-height:1.4;
+    word-break:break-all;
+    color:rgba(239,239,239,0.85);
+  }
+  .payActions{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:10px;
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+  <span class="badge ok">CONFIRMED</span>
+  <h1>Digital Sovereignty Diagnostic</h1>
+  <p>Your intake is received. Next step: booking + preparation so we can deliver a high-signal outcome in one session.</p>
+</header>
+
+<section class="grid">
+
+  <!-- LEFT: CONFIRMATION + NEXT STEPS -->
+  <div class="card">
+    <h2>What happens next</h2>
+    <p>In your Diagnostic we’ll map where Bitcoin plugs into your operating model, identify friction, and propose a clean adoption pathway aligned to the Bitcoin Adoption Framework (BAF).</p>
+
+    <div class="kpi">
+      <div class="pill">
+        <b>Session</b>
+        <span>20–30 minutes</span>
+      </div>
+      <div class="pill">
+        <b>Outcome</b>
+        <span>3 actionable recommendations</span>
+      </div>
+      <div class="pill">
+        <b>Deliverable</b>
+        <span>Bitcoin Readiness Scorecard</span>
+      </div>
+      <div class="pill">
+        <b>Payment</b>
+        <span>BTC (Lightning preferred)</span>
+      </div>
+    </div>
+
+    <div class="hr"></div>
+
+    <h2>Prep checklist (2 minutes)</h2>
+    <ul class="list">
+      <li>Be ready to describe your current systems in plain language (no confidential detail needed).</li>
+      <li>Share your top constraint: cost, compliance, fees, trust, or growth.</li>
+      <li>Confirm who the decision-maker is (or how decisions are made).</li>
+      <li>Optional: note your current BTC exposure (none / personal / company treasury).</li>
+    </ul>
+
+    <!-- CTA buttons -->
+    <div class="ctaRow">
+      <a class="btn primary"
+         href="https://calendar.google.com/appointments/schedules/AcZssZ1SCGnnQJQ5dA5BmwzWEwZnLuIABepFch44jUbnT1MzH2rZml7xzQMnXSHPXhY8syKvYEVttBva"
+         target="_blank" rel="noopener">
+        Book the Diagnostic Call
+      </a>
+
+      <a class="btn secondary"
+         href="mailto:support@tr4nsform.me?subject=Diagnostic%20Payment%20Confirmation&body=Hi%20SASCOSM%2C%0A%0AI%27ve%20sent%20BTC%20for%20the%20Digital%20Sovereignty%20Diagnostic.%0A%0ATXID%3A%20%0A%0AName%3A%20%0ACompany%3A%20%0AThanks%2C"
+         rel="noopener">
+        Send payment confirmation
+      </a>
+    </div>
+
+    <!-- On-chain payment box (below buttons for better layout) -->
+    <div class="payBox">
+      <div style="font-weight:700; margin-bottom:6px;">Pay in BTC (On-chain)</div>
+
+      <div class="payAddr" id="btcAddress">
+        bc1qhrk3nx9drdn445j20gkq9jtz58x5pw94ah8aml
+      </div>
+
+      <div class="payActions">
+        <button class="btn secondary" type="button" id="copyBtn">
+          Copy BTC address
+        </button>
+
+        <a class="btn secondary"
+           href="bitcoin:bc1qhrk3nx9drdn445j20gkq9jtz58x5pw94ah8aml"
+           target="_blank" rel="noopener">
+          Open in wallet
+        </a>
+      </div>
+
+      <div class="tiny" style="margin-top:10px;">
+        After sending, include your transaction ID (TXID) using “Send payment confirmation” or email
+        <a href="mailto:support@tr4nsform.me" style="color:#00d4ff;">support@tr4nsform.me</a>.
+      </div>
+    </div>
+
+    <p class="tiny" style="margin-top:12px;">
+      If you don’t have a Lightning wallet yet, we can send an on-chain invoice. No problem.
+    </p>
+  </div>
+
+  <!-- RIGHT: UPSELL -->
+  <div class="card">
+    <span class="badge warn">OPTIONAL NEXT STEP</span>
+    <h2>Upgrade: Bitcoin Readiness Assessment</h2>
+    <p>If you want a structured plan beyond the call, the Readiness Assessment turns the Diagnostic into a 2–4 week delivery with architecture, risk mapping, and an execution roadmap.</p>
+
+    <ul class="list">
+      <li>Custody & security posture upgrade</li>
+      <li>Operational adoption plan (payments / treasury / settlement)</li>
+      <li>Risk, compliance, and governance options</li>
+      <li>Roadmap into pilot deployment</li>
+    </ul>
+
+    <div class="hr"></div>
+
+    <p class="tiny"><b style="color:var(--text);">Typical range:</b> $5K–$25K (scope dependent)</p>
+    <p class="tiny">If your score indicates “Fast-Lane Strategic,” this becomes the recommended next step immediately after the Diagnostic.</p>
+
+    <div class="ctaRow">
+      <a class="btn primary" href="#" target="_blank" rel="noopener">Request the Assessment Scope</a>
+      <a class="btn secondary"
+         href="mailto:support@tr4nsform.me?subject=Bitcoin%20Readiness%20Assessment%20Scope&body=Hi%20SASCOSM%2C%0A%0AI%27d%20like%20to%20request%20a%20scope%20for%20the%20Bitcoin%20Readiness%20Assessment.%0A%0ACompany%3A%0ARole%3A%0ATimeline%3A%0ABudget%3A%0A%0AThanks%2C">
+        Email Scope Request
+      </a>
+    </div>
+  </div>
+
+</section>
+
+<section class="card">
+  <h2>Reference: Bitcoin Adoption Framework (BAF)</h2>
+  <p class="tiny mono">
+    BAF-1 Insight → Diagnostic<br/>
+    BAF-2 Experiment → Readiness + pilot design<br/>
+    BAF-3 Commitment → Pilot deployment<br/>
+    BAF-4 Transformation → sovereign infrastructure program<br/>
+    BAF-5 Autonomy → MYRA OS / ecosystem model
+  </p>
+</section>
+
+<footer style="text-align:center; padding:40px 0; opacity:0.6;">
+  A SASCOSM Digital Intelligence Framework
+</footer>
+
+<script>
+  // Copy-to-clipboard with fallback
+  (function () {
+    const addr = "bc1qhrk3nx9drdn445j20gkq9jtz58x5pw94ah8aml";
+    const btn = document.getElementById("copyBtn");
+
+    async function copyText(text) {
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+          return true;
+        }
+      } catch (e) {}
+      // Fallback
+      try {
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "absolute";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.select();
+        const ok = document.execCommand("copy");
+        document.body.removeChild(ta);
+        return ok;
+      } catch (e) {
+        return false;
+      }
+    }
+
+    btn.addEventListener("click", async () => {
+      const ok = await copyText(addr);
+      const original = btn.textContent;
+      btn.textContent = ok ? "Copied ✓" : "Copy failed";
+      setTimeout(() => (btn.textContent = original), 1500);
+    });
+  })();
+</script>
+
+</body>
+</html>
