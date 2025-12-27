@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>SASCOSM · Engage</title>
+
+  <!-- Basic SEO -->
+  <meta name="description" content="A private engagement interface for structured discovery and alignment." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Minimal styling (safe, no dependencies) -->
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --panel: rgba(255,255,255,0.06);
+      --text: #e6e8eb;
+      --muted: #9aa3ad;
+      --accent: #4da3ff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(1200px 600px at 50% -20%, #142033, var(--bg));
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
+      min-height: 100vh;
+    }
+
+    .wrap {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 680px;
+      background: var(--panel);
+      backdrop-filter: blur(12px);
+      border-radius: 18px;
+      padding: 36px 32px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+    }
+
+    h1 {
+      font-size: 28px;
+      margin: 0 0 12px 0;
+      letter-spacing: 0.2px;
+    }
+
+    p {
+      line-height: 1.6;
+      margin: 0 0 16px 0;
+      color: var(--muted);
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(255,255,255,0.25), transparent);
+      margin: 24px 0;
+    }
+
+    .cta {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 12px 18px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent), #7cc0ff);
+      color: #081018;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform .15s ease, box-shadow .15s ease;
+      box-shadow: 0 10px 30px rgba(77,163,255,0.35);
+    }
+
+    .cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 40px rgba(77,163,255,0.45);
+    }
+
+    footer {
+      margin-top: 28px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 28px 22px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <main class="card">
+      <h1>Engagement Interface</h1>
+
+      <p>
+        This environment is used for structured discovery, alignment,
+        and next-step coordination.
+      </p>
+
+      <p>
+        Access is intentionally minimal, private, and context-driven.
+      </p>
+
+      <div class="divider"></div>
+
+      <p>
+        If you were directed here, the next step will be shared
+        through the appropriate channel.
+      </p>
+
+      <!-- OPTIONAL CTA (safe placeholder) -->
+      <!--
+      <a class="cta" href="https://calendar.google.com/appointments/..."
+         target="_blank" rel="noopener">
+        Continue
+      </a>
+      -->
+
+      <footer>
+        © SASCOSM · All rights reserved
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
