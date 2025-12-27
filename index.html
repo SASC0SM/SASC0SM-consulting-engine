@@ -1,144 +1,222 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>ENGAGE | SASCOSM Consulting Engine</title>
+  <meta name="description" content="SASCOSM sovereign-first advisory engagement interface." />
 
-  <title>SASCOSM · Engage</title>
-
-  <!-- Basic SEO -->
-  <meta name="description" content="A private engagement interface for structured discovery and alignment." />
-  <meta name="robots" content="index, follow" />
-
-  <!-- Minimal styling (safe, no dependencies) -->
   <style>
-    :root {
-      --bg: #0b0f14;
-      --panel: rgba(255,255,255,0.06);
-      --text: #e6e8eb;
-      --muted: #9aa3ad;
-      --accent: #4da3ff;
+    :root{
+      --bg0:#05060a;
+      --bg1:#070a14;
+      --ink:#eaf1ff;
+      --muted:#a8b7d9;
+      --glass:rgba(255,255,255,.08);
+      --stroke:rgba(180,210,255,.18);
+      --cyan:#45e6ff;
+      --violet:#b78bff;
+      --gold:#ffd27d;
+      --ok:#3dff92;
+      --radius:20px;
+      --max:1100px;
+      --font: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
     }
 
-    * {
-      box-sizing: border-box;
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%}
+    body{
+      font-family:var(--font);
+      color:var(--ink);
+      background:
+        radial-gradient(800px 500px at 10% 10%, rgba(69,230,255,.18), transparent 60%),
+        radial-gradient(700px 500px at 90% 20%, rgba(183,139,255,.16), transparent 60%),
+        linear-gradient(180deg,var(--bg0),var(--bg1));
     }
 
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: radial-gradient(1200px 600px at 50% -20%, #142033, var(--bg));
-      color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
-      min-height: 100vh;
+    a{color:inherit;text-decoration:none}
+
+    header{
+      position:sticky;
+      top:0;
+      backdrop-filter:blur(14px);
+      background:rgba(5,6,10,.75);
+      border-bottom:1px solid rgba(180,210,255,.12);
+      z-index:10;
     }
 
-    .wrap {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
+    .nav{
+      max-width:var(--max);
+      margin:auto;
+      padding:14px 16px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
     }
 
-    .card {
-      width: 100%;
-      max-width: 680px;
-      background: var(--panel);
-      backdrop-filter: blur(12px);
-      border-radius: 18px;
-      padding: 36px 32px;
-      box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+    .brand{
+      font-weight:700;
+      letter-spacing:.18em;
+      font-size:12px;
     }
 
-    h1 {
-      font-size: 28px;
-      margin: 0 0 12px 0;
-      letter-spacing: 0.2px;
+    .pill{
+      padding:8px 12px;
+      border-radius:999px;
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(180,210,255,.14);
+      font-size:12px;
+      margin-left:8px;
     }
 
-    p {
-      line-height: 1.6;
-      margin: 0 0 16px 0;
-      color: var(--muted);
+    main{
+      max-width:var(--max);
+      margin:auto;
+      padding:28px 16px 60px;
     }
 
-    .divider {
-      height: 1px;
-      background: linear-gradient(to right, transparent, rgba(255,255,255,0.25), transparent);
-      margin: 24px 0;
+    .card{
+      background:linear-gradient(180deg,rgba(255,255,255,.10),rgba(255,255,255,.04));
+      border:1px solid rgba(180,210,255,.18);
+      border-radius:26px;
+      padding:26px;
+      margin-bottom:20px;
     }
 
-    .cta {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 12px 18px;
-      border-radius: 10px;
-      background: linear-gradient(135deg, var(--accent), #7cc0ff);
-      color: #081018;
-      text-decoration: none;
-      font-weight: 600;
-      transition: transform .15s ease, box-shadow .15s ease;
-      box-shadow: 0 10px 30px rgba(77,163,255,0.35);
+    .hero h1{
+      font-size:clamp(28px,4vw,44px);
+      line-height:1.05;
+      margin:12px 0;
     }
 
-    .cta:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 16px 40px rgba(77,163,255,0.45);
+    .accent{
+      background:linear-gradient(90deg,var(--cyan),var(--violet),var(--gold));
+      -webkit-background-clip:text;
+      color:transparent;
     }
 
-    footer {
-      margin-top: 28px;
-      font-size: 13px;
-      color: var(--muted);
+    .lead{
+      color:var(--muted);
+      max-width:60ch;
+      line-height:1.55;
     }
 
-    @media (max-width: 480px) {
-      .card {
-        padding: 28px 22px;
-      }
+    .btn{
+      display:inline-block;
+      margin-top:16px;
+      padding:12px 16px;
+      border-radius:14px;
+      background:linear-gradient(135deg,rgba(69,230,255,.25),rgba(183,139,255,.20));
+      border:1px solid rgba(255,255,255,.18);
+      font-weight:700;
+      font-size:13px;
+    }
 
-      h1 {
-        font-size: 24px;
-      }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:14px;
+      margin-top:18px;
+    }
+
+    .mini{
+      padding:14px;
+      border-radius:18px;
+      background:rgba(0,0,0,.25);
+      border:1px solid rgba(180,210,255,.14);
+    }
+
+    footer{
+      margin-top:40px;
+      font-size:12px;
+      color:var(--muted);
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:10px;
     }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
-    <main class="card">
-      <h1>Engagement Interface</h1>
 
-      <p>
-        This environment is used for structured discovery, alignment,
-        and next-step coordination.
-      </p>
-
-      <p>
-        Access is intentionally minimal, private, and context-driven.
-      </p>
-
-      <div class="divider"></div>
-
-      <p>
-        If you were directed here, the next step will be shared
-        through the appropriate channel.
-      </p>
-
-      <!-- OPTIONAL CTA (safe placeholder) -->
-      <!--
-      <a class="cta" href="https://calendar.google.com/appointments/..."
-         target="_blank" rel="noopener">
-        Continue
-      </a>
-      -->
-
-      <footer>
-        © SASCOSM · All rights reserved
-      </footer>
-    </main>
+<header>
+  <div class="nav">
+    <div class="brand">ENGAGE · SASCOSM</div>
+    <div>
+      <a class="pill" href="#pathways">Pathways</a>
+      <a class="pill" href="#contact">Start</a>
+    </div>
   </div>
+</header>
+
+<main>
+
+  <section class="card hero">
+    <div style="font-size:12px;letter-spacing:.14em;color:var(--muted)">
+      DNS HANDSHAKE IN PROGRESS · GLASS ONLINE
+    </div>
+
+    <h1>
+      Build sovereign systems that
+      <span class="accent">outlast</span>
+      legacy infrastructure.
+    </h1>
+
+    <p class="lead">
+      ENGAGE is the public interface for the SASCOSM Consulting Engine — a
+      sovereign-first advisory funnel converting inbound signal into
+      high-value Bitcoin-aligned transformation engagements.
+    </p>
+
+    <a class="btn" href="mailto:engage@sascosm.com?subject=ENGAGE%20Discovery">
+      Request Discovery
+    </a>
+  </section>
+
+  <section id="pathways" class="card">
+    <h2 style="letter-spacing:.18em;font-size:13px;">PATHWAYS</h2>
+
+    <div class="grid">
+      <div class="mini">
+        <b>Security & Privacy</b><br/>
+        Threat modelling, comms, identity, custody, zero-leak systems.
+      </div>
+
+      <div class="mini">
+        <b>Bitcoin Infrastructure</b><br/>
+        Nodes, Lightning, treasury policy, sovereign payment rails.
+      </div>
+
+      <div class="mini">
+        <b>Energy & Smart Systems</b><br/>
+        Energy-finance convergence, mining, AI, delivery frameworks.
+      </div>
+
+      <div class="mini">
+        <b>Product Architecture</b><br/>
+        Clean MVPs, modular stacks, mobile-first sovereign UX.
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="card">
+    <h2 style="letter-spacing:.18em;font-size:13px;">CONTACT</h2>
+    <p class="lead">
+      One objective. One message. Clean signal only.
+    </p>
+
+    <a class="btn" href="mailto:engage@sascosm.com">
+      engage@sascosm.com
+    </a>
+  </section>
+
+  <footer>
+    <div>© SASCOSM · ENGAGE</div>
+    <div>Static · Sovereign · No Tracking</div>
+  </footer>
+
+</main>
+
 </body>
 </html>
